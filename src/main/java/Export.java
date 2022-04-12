@@ -46,12 +46,14 @@ public class Export {
                 "    //dzydk_time抵质押贷失效时间\n" +
                 "    private String dTime;";
 //        test02(sl);
-        String ss = "dayDiff";
-        String className = "usuryTypeBeanTestor";
-        test(className,ss);
-        test(className,"effectCountKeys");
-        test(className,"effectMonthKeys");
-        test(className,"ss");
+//        String ss = "dayDiff";
+//        String className = "usuryTypeBeanTestor";
+//        test(className,ss);
+//        test(className,"effectCountKeys");
+//        test(className,"effectMonthKeys");
+        test("usuryFilterDataImplTestor","TreeMap");
+//        test("ss");
+//        test(className,"ss");
     }
 
     /**
