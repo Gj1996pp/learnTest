@@ -1,0 +1,20 @@
+
+k
+java:S4201"IRemove this unnecessary null check; "instanceof" returns false for nulls.(å¤ü­ûÿÿÿÿ8Ä¾ŒÀä/
+a
+java:S3252"DUse static access with "com.alibaba.fastjson.JSON" for "parseArray".(‹Ö·ª8Ä¾ŒÀä/
+G
+java:S1172"+Remove this unused method parameter "CLZZ".(¯±8‘•¹‚û/
+f
+java:S4143#"DVerify this is the key that was intended; it was already set before.(÷õÂ”şÿÿÿÿ8£ÏÚ«û/
+b
+java:S1128"@Remove this unused import 'com.alibaba.fastjson.parser.Feature'.(ùë¦şÿÿÿÿ8ôÒÑÀä/
+X	java:S125
+"<This block of commented-out lines of code should be removed.(¾˜¤ö8äÔ¸‚û/
+\
+java:S3252"?Use static access with "com.alibaba.fastjson.JSON" for "parse".(¼×…ÿ8Ä¾ŒÀä/
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯±8ˆØª‚û/
+W	java:S125"<This block of commented-out lines of code should be removed.(†•m8–”Àä/
+U	java:S106 "9Replace this use of System.out or System.err by a logger.(‘±…8Èµ”Àä/
+]	java:S125"<This block of commented-out lines of code should be removed.(¶çºÎûÿÿÿÿ8ğ¾¸‚û/
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(­îŠ´8²ÆÛ«û/

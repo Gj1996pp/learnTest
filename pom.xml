@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>learnTest</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+        <repositories>
+            <repository>
+                <id>alimaven</id>
+                <name>aliyun maven</name>
+                <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            </repository>
+        </repositories>
+
+        <distributionManagement>
+            <snapshotRepository>
+                <id>100credit_snapshots</id>
+                <name>100credit Snapshot Repository</name>
+                <url>http://192.168.162.106:8081/nexus/content/repositories/snapshots/</url>
+            </snapshotRepository>
+        </distributionManagement>
+
+        <parent>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>2.0.2.RELEASE</version>
+        </parent>
+
+        <properties>
+            <java.version>1.8</java.version>
+            <swagger.version>2.8.0</swagger.version>
+            <google.guava>23.0</google.guava>
+            <fastjson.version>1.2.47</fastjson.version>
+            <druid.version>1.1.9</druid.version>
+            <poi.version>3.17</poi.version>
+            <jwt.version>0.9.0</jwt.version>
+            <mybatis.version>1.3.2</mybatis.version>
+            <commons-logging.version>1.2</commons-logging.version>
+            <dom4j.version>1.6.1</dom4j.version>
+            <httpclient.version>4.5.2</httpclient.version>
+            <httpcore.version>4.4.4</httpcore.version>
+
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+
+        </properties>
+
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google.guava}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>3.6</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
+            </dependency>
+            <!--增加上传依赖-->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>1.3.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+            </dependency>
+            <!--改为stater的方式 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-bean-validators</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-codec</artifactId>
+                        <groupId>commons-codec</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+            </dependency>
+
+            <!-- <dependency>
+                <groupId>com.br.ice.service</groupId>
+                <artifactId>es-md5-rely</artifactId>
+                <version>1.4.0</version>
+            </dependency> -->
+
+            <dependency>
+                <groupId>com.br.ice.service</groupId>
+                <artifactId>dac-rely</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+
+            <!-- 新服务接口依赖 增加sha256解密-->
+            <dependency>
+                <groupId>com.br.ice.service</groupId>
+                <artifactId>encode-mapping-rely</artifactId>
+                <version>1.0.3</version>
+            </dependency>
+
+            <!-- <dependency>
+                <groupId>com.br.bsf</groupId>
+                <artifactId>bsf-ext</artifactId>
+                <version>1.0.0</version>
+            </dependency> -->
+
+            <dependency>
+                <groupId>com.br.bsf</groupId>
+                <artifactId>bsf-ext</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+
+            <!-- 节选 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-log4j2</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <optional>true</optional>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>2.6</version>
+            </dependency>
+
+
+            <!-- <dependency>
+                <groupId>brCommonApi</groupId>
+               <artifactId>brCommonApi</artifactId>
+               <version>1.0.0</version>
+           </dependency> -->
+
+            <dependency>
+                <groupId>bsApi2</groupId>
+                <artifactId>bsApi2</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+            </dependency>
+            <!-- <dependency>
+                <groupId>bsApi3</groupId>
+                <artifactId>bsApi-3.6.2-shaded</artifactId>
+                <version>3.6.2</version>
+                <scope>system</scope>
+                <systemPath>${project.basedir}/src/main/resources/lib/bsApi-3.6.2-shaded.jar</systemPath>
+            </dependency> -->
+
+            <!--使用freemaker生成word-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-freemarker</artifactId>
+            </dependency>
+            <!-- framework 包-->
+            <dependency>
+                <groupId>org.apache.avalon.framework</groupId>
+                <artifactId>avalon-framework-api</artifactId>
+                <version>4.3.1</version>
+            </dependency>
+        </dependencies>
+        <profiles>
+            <profile>
+                <id>dev</id>
+                <properties>
+                    <env>src/main/resources/env-dev</env>
+                </properties>
+                <activation>
+                    <activeByDefault>true</activeByDefault>
+                </activation>
+            </profile>
+            <profile>
+                <id>test</id>
+                <properties>
+                    <env>src/main/resources/env-test</env>
+                </properties>
+            </profile>
+            <profile>
+                <id>pre</id>
+                <properties>
+                    <env>src/main/resources/env-pre</env>
+                </properties>
+            </profile>
+            <profile>
+                <id>prod</id>
+                <properties>
+                    <env>src/main/resources/env-prod</env>
+                </properties>
+            </profile>
+        </profiles>
+        <build>
+            <resources>
+                <resource>
+                    <directory>src/main/resources</directory>
+                    <excludes>
+                        <exclude>env-dev/*.*</exclude>
+                        <exclude>env-test/*.*</exclude>
+                        <exclude>env-pre/*.*</exclude>
+                        <exclude>env-prod/*.*</exclude>
+                    </excludes>
+                </resource>
+                <resource>
+                    <directory>${env}</directory>
+                </resource>
+            </resources>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <includeSystemScope>true</includeSystemScope>
+                        <mainClass>com.br.ops.server.SecurityApplication</mainClass>
+                    </configuration>
+                </plugin>
+            </plugins>
+            <finalName>learnTest</finalName>
+        </build>
+
+
+</project>
+
+
+

@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 
@@ -44,24 +46,33 @@ public class Export {
                 "\n" +
                 "    //dzydk_time抵质押贷失效时间\n" +
                 "    private String dTime;";
-        test02(sl);
-
+//        test02(sl);
+        String ss = "dayDiff";
+        String className = "usuryTypeBeanTestor";
+        test(className,ss);
+        test(className,"effectCountKeys");
+        test(className,"effectMonthKeys");
+//        test("ss");
     }
 
-    public static void test02(String sl){
+    /**
+     * 实体变量
+     * @param sl sl
+     **/
+    public static void test02(String className, String sl){
         String[] split = sl.split(";");
         for (String s : split) {
             int i = s.lastIndexOf(" ");
             String substring = s.substring(i+1, s.length());
-            String s1 = captureName(substring);
+//            String s1 = captureName(substring);
 //            System.out.println(s1);
-            test(s1);
+            test(className,substring);
         }
 
     }
 
-    public static void test(String methord){
-
+    public static void test(String className,String methord1){
+        String methord = captureName(methord1);
 //        System.out.println("@Test(description = \"覆盖set"+methord+"、get"+methord+"方法\")\n" +
 //                "    public void testSet"+methord+"001(){\n" +
 //                "        String input = \""+methord+"\";\n" +
@@ -69,10 +80,11 @@ public class Export {
 //                "        String result = totalLoanStrDtoTester.get"+methord+"();\n" +
 //                "        Assert.assertEquals(result,input);\n" +
 //                "    }");
-
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        String format = simpleDateFormat.format(new Date());
         String description = " /**\n" +
                 "     * 作者：jie.gao1\n" +
-                "     * 时间：2022/04/07\n" +
+                "     * 时间："+format+"\n" +
                 "     * 测试对象：simpleClassName,testSet"+methord+"001\n" +
                 "     * 用例说明：覆盖set"+methord+"、get"+methord+"方法\n" +
                 "     * 测试类型：覆盖测试\n" +
@@ -80,8 +92,8 @@ public class Export {
                 "    @Test(description = \"覆盖set"+methord+"、get"+methord+"方法\")\n" +
                 "    public void testSet"+methord+"001(){\n" +
                 "        String input = \""+methord+"\";\n" +
-                "        totalLoanStrDtoTester.set"+methord+"(input);\n" +
-                "        String result = totalLoanStrDtoTester.get"+methord+"();\n" +
+                "        "+className+".set"+methord+"(input);\n" +
+                "        String result = "+className+".get"+methord+"();\n" +
                 "        Assert.assertEquals(result,input);\n" +
                 "    }";
         System.out.println(description);
