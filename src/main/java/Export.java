@@ -45,13 +45,49 @@ public class Export {
                 "\n" +
                 "    //dzydk_time抵质押贷失效时间\n" +
                 "    private String dTime;";
-//        test02(sl);
-        String ss = "dayDiff";
-        String className = "usuryTypeBeanTestor";
-        test(className,ss);
-        test(className,"effectCountKeys");
-        test(className,"effectMonthKeys");
-        test(className,"ss");
+        String useary ="   /**\n" +
+                "     * 引入过滤数据处理类\n" +
+                "     */\n" +
+                "    private FilterData filterDataBean;\n" +
+                "\n" +
+                "    /**\n" +
+                "     * 引入需要处理数据类\n" +
+                "     */\n" +
+                "    private Map<String, String> result;\n" +
+                "\n" +
+                "    /**\n" +
+                "     * 引入查询apicode\n" +
+                "     */\n" +
+                "    private String selfapiCode;\n" +
+                "\n" +
+                "    /**\n" +
+                "     * 引入查询日期\n" +
+                "     */\n" +
+                "    private String queryDate;\n" +
+                "\n" +
+                "    private UsuryTypeBean usuryTypeBean;\n" +
+                "\n" +
+                "    /**\n" +
+                "     * 去重处理类\n" +
+                "     */\n" +
+                "    private IntervalDistinct intervalDistinct;\n" +
+                "\n" +
+                "    /**\n" +
+                "     * 需要保留的数据天数\n" +
+                "     */\n" +
+                "    private int retainDay;";
+        test02("usuryCounterTestor",useary);
+//        String ss = "dayDiff";
+//        String className = "usuryTypeBeanTestor";
+//        test(className,ss);
+//        test(className,"effectCountKeys");
+//        test(className,"effectMonthKeys");
+//        test("usuryFilterDataImplTestor","TreeMap");
+//        test("ss");
+//        test(className,"ss");
+//        test("","");
+        //第一次提交
+        //
     }
 
     /**
